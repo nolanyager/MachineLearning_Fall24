@@ -3,14 +3,21 @@ title: "Homework 1"
 format: html
 ---
 
-__Name:__ \<your name here\>
+__Name:__ \<Nolan Yager\>
 
 
 __Question 1:__ Use a programming language of your choice to save today's date to a variable.
 Then, include the date in the text below the code block.
 
 ```
-# your code here
+# from datetime import datetime
+
+# Save today's date as a variable
+today_date = datetime.today().date()
+
+# Print the variable
+print(today_date)
+
 ```
 
 Today's date is: `<your answer here>`.
