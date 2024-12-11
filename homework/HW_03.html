@@ -7546,7 +7546,7 @@ Your extension should be the one you use for your programming language of choice
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Import Packages: </span>
@@ -7595,7 +7595,7 @@ Here, we are going to use the CDC SVI data to create an alternative index based 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Loading merged data</span>
@@ -7616,14 +7616,7 @@ Here, we are going to use the CDC SVI data to create an alternative index based 
 <li>The following variables are used in the SVI:
 <code>EP_POV150, EP_UNEMP, EP_HBURD, EP_NOHSDP, EP_UNINSUR, EP_AGE65, EP_AGE17, EP_DISABL, EP_SNGPNT, EP_LIMENG, EP_MINRTY, EP_MUNIT, EP_MOBILE, EP_CROWD, EP_NOVEH, EP_GROUPQ, EP_NOINT</code>
 a. Subset the merged dataset to only include the variables above and look at the pattern of missing data.
-Are missing observations scattered throughout the data or are entire rows or columns missing?
-b. PCA cannot handle missing values by default.
-There are several options for handling missing data generally, including imputation, removing rows with missing data, or removing columns with missing data.
-Deal with the missing data in a way that makes sense for the pattern of missing data and the goals of the analysis. Explain why you made this decision.
-<em>Note: How you handle this is specific to the missing data pattern and the goals of the analysis.
-For example, when entire rows or columns are missing, imputation may not be appropriate and dropping those rows or columns is usually the best option.
-Conversely, if you have a general missingness pattern where missing observations are scattered throughout the data, imputation is likely the best option.</em>
-c. After dealing with the missing data, perform PCA on the SVI variables.</li>
+Are missing observations scattered throughout the data or are entire rows or columns missing?</li>
 </ol>
 </div>
 </div>
@@ -7633,7 +7626,7 @@ c. After dealing with the missing data, perform PCA on the SVI variables.</li>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Subsetting merged dataset by identifying columns of interest</span>
@@ -7695,6 +7688,17 @@ dtype: int64
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="ADDED:">ADDED:<a class="anchor-link" href="#ADDED:">¶</a></h1><p>So it appears that we have 96 values missing from a bunch of different columns, as opposed to all the values in one or two columns missing.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>d. PCA cannot handle missing values by default.
 There are several options for handling missing data generally, including imputation, removing rows with missing data, or removing columns with missing data.
 Deal with the missing data in a way that makes sense for the pattern of missing data and the goals of the analysis. Explain why you made this decision.
@@ -7711,8 +7715,7 @@ Conversely, if you have a general missingness pattern where missing observations
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>MY STRATEGY:
-Note that I will be using imputation. As we can see above, we have about 96 values missing from quite a few different columns, so if we dropped all those columns we'd lose way more data than we need to. I suspect that what happened was perhaps an error when merging the data. But since this homework is about imputing data, I'm not going to go back and fix it, I'll impute here.</p>
+<h1 id="MY-STRATEGY-FOR-DEALING-WITH-MISSING-DATA:">MY STRATEGY FOR DEALING WITH MISSING DATA:<a class="anchor-link" href="#MY-STRATEGY-FOR-DEALING-WITH-MISSING-DATA:">¶</a></h1><p>Note that I will be using imputation. As we can see above, we have about 96 values missing from quite a few different columns, so if we dropped all those columns we'd lose way more data than we need to. I suspect that what happened was perhaps an error when merging the data. But since this homework is about imputing data, I'm not going to go back and fix it, I'll impute here.</p>
 </div>
 </div>
 </div>
@@ -7721,7 +7724,7 @@ Note that I will be using imputation. As we can see above, we have about 96 valu
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Using SciKit-Learn imputer</span>
@@ -7786,7 +7789,7 @@ dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
@@ -7832,7 +7835,7 @@ dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># PCA Plot:</span>
@@ -7880,7 +7883,7 @@ How would you interpret the first three prinicpal components?
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Extracting the loadings for first three principal components</span>
@@ -7973,6 +7976,19 @@ Index(['EP_POV150', 'EP_UNEMP', 'EP_HBURD', 'EP_NOHSDP', 'EP_UNINSUR',
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="ADDED---Interpretation-of-First-3-Principal-components">ADDED - Interpretation of First 3 Principal components<a class="anchor-link" href="#ADDED---Interpretation-of-First-3-Principal-components">¶</a></h1><p>For PC1, variables such as 150% poverty level, % high school diploma, single parent, and minority all have higher loadings (among others) suggesting that PC1 is capturing aspects of these types of social vulnerability and economic vulnerability. Notably, % 65 and older as well as multi-unit buildings are negatively loaded.</p>
+<p>For PC2, we see the highest loadings on % 65 and older, % disabled, % in mobile homes and % with no internet (poverty is also positively loaded). PC2 here is capturing very different aspects of economic and social vulnerability than PC1: PC2 here is perhaps capturing the most vulnerable elderly populations (i.e. disabled elderly, impoverished elderly, those in poor housing conditions, etc).</p>
+<p>For PC3, we see the highest loading by far on % 17 and younger, so I would say that this is capturing individuals who may be socially vulnerable who are minors.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ol start="3">
 <li>There are several different ways to determine the number of principal components to retain.
 One common method is to retain principal components that explain a certain percentage of the variance in the data.
@@ -7987,7 +8003,7 @@ a. How many principal components are needed to explain 90% of the variance in th
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate cumulative explained variance</span>
@@ -8026,6 +8042,18 @@ Number of components needed to explain 90% of variance: 11
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="ADDED:-How-many-components-are-needed-to-explain-the-variance:">ADDED: How many components are needed to explain the variance:<a class="anchor-link" href="#ADDED:-How-many-components-are-needed-to-explain-the-variance:">¶</a></h1><p>To explain 80% of the variance, you need 7 components.</p>
+<p>To explain 90% of the variance, you need 11 components.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ol start="4">
 <li>An alternative approach is to plot the eigenvalues of the principal components and retain the components that are above the "elbow" in the plot. In other words the eigenvalues that are substantially larger than the rest.
 a. Create a <a href="https://en.wikipedia.org/wiki/Scree_plot">scree plot</a> of the eigenvalues of the principal components.
@@ -8039,7 +8067,7 @@ b. How many principal components should be retained based on the scree plot? Thi
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Extracting and labeling the eigenvalues i.e., the explained variance from the PCA above</span>
@@ -8077,8 +8105,7 @@ b. How many principal components should be retained based on the scree plot? Thi
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>NOLAN ANSWER:
-You want to include up to about the elbow, which is at about 4-5 principal components. To be safe, let's say we'll include the first 5 principal components.</p>
+<h1 id="How-many-variables-should-be-retained?">How many variables should be retained?<a class="anchor-link" href="#How-many-variables-should-be-retained?">¶</a></h1><p>You want to include up to about the elbow, which is at about 4-5 principal components. To be safe, let's say we'll include the first 5 principal components.</p>
 </div>
 </div>
 </div>
@@ -8105,7 +8132,7 @@ For the purposes of this assignment, the <code>pca_cv_error</code> function is a
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
@@ -8167,6 +8194,12 @@ For the purposes of this assignment, the <code>pca_cv_error</code> function is a
 <span class="n">n_folds</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">folds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_folds</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
+<span class="n">errors</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">max_k</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="n">pca_cv_error</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">folds</span><span class="p">)</span>
+    <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+
 <span class="c1"># Determine the optimal number of principal components</span>
 <span class="n">optimal_k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Optimal number of principal components: </span><span class="si">{</span><span class="n">optimal_k</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
@@ -8181,18 +8214,21 @@ For the purposes of this assignment, the <code>pca_cv_error</code> function is a
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-intense-fg ansi-bold">In[17], line 61</span>
-<span class="ansi-green-fg">     58</span> folds <span style="color: rgb(98,98,98)">=</span> np<span style="color: rgb(98,98,98)">.</span>random<span style="color: rgb(98,98,98)">.</span>randint(<span style="color: rgb(98,98,98)">1</span>, n_folds <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(98,98,98)">1</span>, X<span style="color: rgb(98,98,98)">.</span>shape)
-<span class="ansi-green-fg">     60</span> <span style="color: rgb(95,135,135)"># Determine the optimal number of principal components</span>
-<span class="ansi-green-intense-fg ansi-bold">---&gt; 61</span> optimal_k <span style="color: rgb(98,98,98)">=</span> np<span style="color: rgb(98,98,98)">.</span>argmin(<span class="ansi-yellow-bg">errors</span>) <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(98,98,98)">1</span>
-<span class="ansi-green-fg">     62</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">Optimal number of principal components: </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>optimal_k<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)">"</span>)
-
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name 'errors' is not defined</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Optimal number of principal components: 6
+</pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="ADDED:-this-analysis-suggests-that-the-optimal-number-of-principal-components-is-6.">ADDED: this analysis suggests that the optimal number of principal components is 6.<a class="anchor-link" href="#ADDED:-this-analysis-suggests-that-the-optimal-number-of-principal-components-is-6.">¶</a></h1>
 </div>
 </div>
 </div>
